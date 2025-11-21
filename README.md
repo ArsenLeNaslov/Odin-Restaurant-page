@@ -1,4 +1,4 @@
-# Odin Orbital Station Restaurant Page
+# Odin's Orbital Space Station Restaurant Page
 
 An orbital space station-themed restaurant webpage demonstrating dynamic JavaScript-driven content loading with Webpack, modular components, and responsive CSS styling to create an immersive online dining experience on an orbital station.
 
