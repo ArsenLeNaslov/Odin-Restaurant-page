@@ -1,0 +1,333 @@
+/* Adapted from Josh's Custom CSS Reset https://www.joshwcomeau.com/css/custom-css-reset/ */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+p {
+  text-wrap: pretty;
+  color: #ffffff;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+table {
+  border-color: currentcolor;
+}
+#root,
+#__next {
+  isolation: isolate;
+}
+/* Global Styles */
+html, body {
+  height: 100%;
+  font-family: "Zen Dots", "Roboto", Arial, Helvetica, sans-serif;
+  background-color: #070812;
+  background-image: url("https://images6.alphacoders.com/110/thumb-1920-1104338.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+html::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/* Navigation - Tabs */
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff21;
+  border-radius: 10px;
+  position: relative;
+  max-width: 600px;
+  margin: 0px auto 20px auto;
+}
+.tabs button {
+  flex-grow: 1;
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 3;
+  color: #2373eb;
+}
+.tabs .active {
+  background: #091c39;
+  height: calc(100% - 10px);
+  width: calc(33% - 10px);
+  position: absolute;
+  top: 5px;
+  left: 0;
+  transform: translateX(5px);
+  border-radius: inherit;
+  box-shadow: 0 6px 18px rgba(31,111,235,0.18);
+  transition: all 100ms;
+}
+/* Content Container */
+#content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.presentation {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(180px, 50vw, 700px);
+}
+.presentation h1 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 4px 4px 20px darkblue;
+  background: linear-gradient(135deg, #bcbccb 0%, #a4a9cb 100%); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.presentation p {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  color: #ffffff;
+}
+/* Cards - Dishes, Beverage, and Contact */
+.dishes-card,
+.beverage-card,
+.contact-card {
+  background: transparent;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0px 6px 18px rgba(2,6,23,0.6);
+  border: 2px solid rgba(230,240,255,0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-container,
+.contactContainer {
+  width: clamp(180px, 50vw, 800px);
+}
+.card-container h2 {
+  font-family: inherit;
+  text-align: center;
+  margin: 15px 0px;
+  font-size: 45px;
+}
+#menu-dishes-section {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 3fr));
+  grid-auto-rows: 1fr;
+}
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px -1px rgba(0, 0, 0, 0.1);
+}
+.dishes-card p:last-child,
+.beverage-card p:last-child {
+  margin-top: auto;
+}
+.description,
+.dishes-card h4,
+.beverage-card h4 {
+  text-align: center;
+}
+.description {
+  font-size: 14px;
+  margin: 5px 0px;
+}
+.dishes-card h4 {
+  margin-top: 10px;
+}
+.beverage-card h4 {
+  margin-top: 10px;
+}
+.dishes-card p:last-child,
+.beverage-card p:last-child {
+  padding: 5px 8px;
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 0px 6px 12px rgba(2,6,23,0.6);
+}
+.dishes-card p:last-child {
+  background-color: rgba(31,111,235,0.9);
+}
+.beverage-card p:last-child {
+  background-color: rgba(104,64,156,0.9);
+}
+.beverage-card img {
+  width: 160px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+/* Menu Sections - dishes and Beverage Grids */
+#menu-drink-section {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  grid-auto-rows: 1fr;
+  margin-bottom: 30px;
+}
+/* Contact Page */
+.contactContainer p,
+.contact-card p {
+  white-space: pre-line;
+}
+.contact-cards-div {
+  display: grid;
+  gap: 20px;
+  grid-auto-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+/* Homepage Image Section */
+.homepage-img {
+  height: 100vh;
+  background-image: url("https://images6.alphacoders.com/110/thumb-1920-1104338.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.homepage-img::before {
+  content: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.homepage-img h1,
+.homepage-img p,
+.homepage-img header {
+  position: relative;
+  z-index: 2;
+}
+.homepage-img p {
+  color: #ffffff;
+}
+/* Contact Styling */
+.contactContainer h1,
+.contactContainer p {
+  text-align: center;
+}
+.contactContainer h1 {
+  margin: 12px;
+  font-size: 48px;
+  text-shadow: 4px 4px 20px darkblue;
+  background: linear-gradient(135deg, #bcbccb 0%, #a4a9cb 100%); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.contactContainer p {
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+.contactContainer p:last-child{
+  color: #ffffff;
+}
+.highlight {
+  font-weight: 600;
+  font-size: 22px;
+  padding: 5px 8px;
+  border-radius: 15px;
+  text-shadow: 4px 4px 20px darkblue;
+  background: linear-gradient(135deg, #6c6ca5 0%, #a4a9cb 100%); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+h2 {
+  text-shadow: 4px 4px 20px darkblue;
+  background: linear-gradient(135deg, #bcbccb 0%, #a4a9cb 100%); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+h3 {
+  text-shadow: 4px 4px 20px darkblue;
+  background: linear-gradient(135deg, #bcbccb 0%, #a4a9cb 100%); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+h4 {
+  text-shadow: 4px 4px 20px darkblue;
+  background: linear-gradient(135deg, #bcbccb 0%, #a4a9cb 100%); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.contact-card {
+  justify-content: center;
+}
+.contact-card p {
+  margin-top: 8px;
+  font-size: 15px;
+}
+.material-icons {
+  color: #4b1c87;
+  font-size: xxx-large;
+}
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 16px 0;
+  color: #ffffff;
+  font-size: 14px;
+  margin-top: auto;
+  text-shadow: 4px 4px 20px darkblue;
+}
+footer a {
+  text-decoration: none;
+  background: linear-gradient(135deg, #8ab4ff 0%, #5867dd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: normal;
+}
+footer a:hover {
+  text-shadow: 0 0 10px rgba(138, 180, 255, 0.5);
+}
